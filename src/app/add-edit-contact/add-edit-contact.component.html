@@ -1,0 +1,39 @@
+
+  <h2 mat-dialog-title>{{(_contact && _contact.id && _contact.id > 0)? 'Edit Contact':'Add New Contact'}}</h2>
+
+<mat-dialog-content>
+    <form class="control-width">
+      <div>
+        <mat-form-field class="control-width">
+          <mat-label>First Name</mat-label>
+          <input name="firstname" maxlength="50" required matInput placeholder="First Name" [(ngModel)]="_contact.firstName">
+        </mat-form-field>
+        <span *ngIf="!_contact.firstName && _isHit" style="color: red;">First name must be required</span>
+      </div>
+      <div>
+        <mat-form-field class="control-width">
+          <mat-label>Last Name</mat-label>
+          <input name="lastname" maxlength="50" required matInput placeholder="Last Name" [(ngModel)]="_contact.lastName">
+        </mat-form-field>
+        <span *ngIf="!_contact.lastName && _isHit" style="color: red;">Last name must be required</span>
+      </div>  
+      <div>
+        <mat-form-field class="control-width">
+          <mat-label>Phone</mat-label>
+          <input name="phone" maxlength="15" required matInput placeholder="Phone" [(ngModel)]="_contact.phone">
+        </mat-form-field>
+        <span *ngIf="!_contact.phone && _isHit" style="color: red;">Phone must be required </span>
+        <span *ngIf="(_contact.phone && (_contact.phone.length < 10 || _contact.phone.length > 14)) && _isHit" style="color: red;">Phone number invalid. </span>
+      </div>     
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class='flex-footer-left'>
+
+
+  </div>
+  <div class='flex-footer-right'>
+    <button mat-button color="primary" (click)="save(_contact)">Save</button>
+    <button mat-button color="warn" (click)="close()">Cancel</button>
+  </div>
+</mat-dialog-actions>

@@ -1,0 +1,28 @@
+.header{
+width: 100%;
+min-height: 50px;
+background-color: rgba(32, 32, 226, 0.726);
+padding: 1px;
+}
+
+.headerLogo{
+    color: white;
+}
+.table{
+    margin-top: 20px;
+    margin-left: 20px;
+    min-width: 90%;
+    background-color: whitesmoke;
+}
+.tableHeader{
+    background-color: rgb(146, 214, 214);
+    min-width: 20%;
+    text-align: left;
+    border-color: gray;
+}
+
+.tableData{
+    /* min-width: 20%; */
+    text-align: left;
+    border-bottom: solid 1px;
+}

@@ -1,0 +1,73 @@
+<div class="header">
+<!-- <h2 class="headerLogo">.... System</h2> -->
+<img style="margin-top: 10px; margin-left: 20px;" src="../assets/logo.png" />
+</div>
+<h2 style="margin-left: 20px;">Contact List</h2>
+
+<div>
+  <img (click)="addNewContact()" src="../assets/add.png" style="max-height: 25px; max-width: 25px; margin-left: 20px;"/>
+
+
+
+
+
+
+<!-- <div style="margin-left: 20px;">
+  <table style="background-color: whitesmoke;">
+    <tr>
+      <td style="width: 100px;"><strong>Firt Name</strong></td>
+      <td style="width: 200px;"><input type="text" required placeholder="First Name" name="firstname" [(ngModel)]="_contact.firstName"></td>
+    </tr>
+
+    <tr>
+      <td style="width: 100px;"><strong>Last Name</strong></td>
+      <td style="width: 200px;"><input type="text" required placeholder="Last Name" name="firstname" [(ngModel)]="_contact.lastName"></td>
+    </tr>
+
+    <tr>
+      <td style="width: 100px;"><strong>Phone</strong></td>
+      <td style="width: 200px;"><input type="text" required placeholder="Phone" name="firstname" [(ngModel)]="_contact.phone"></td>
+    </tr>
+
+    <tr>
+      <td style="width: 100px;"></td>
+      <td style="width: 200px;"><button id="add" aria-label="Add New" mat-menu-item class="menuItem" (click)="cancel()">Cancel</button>
+        <button id="add" aria-label="Add New" mat-menu-item class="menuItem" (click)="saveContact(_contact)">Save</button></td>
+    </tr>
+
+  </table>
+</div>  -->
+  
+<table class="table">
+  <tr>
+    <th class="tableHeader">
+      <strong>First Name</strong>
+    </th>
+
+    <th class="tableHeader">
+      <strong>Last Name</strong>
+    </th>
+
+    <th class="tableHeader"> 
+      <strong>Phone</strong>
+    </th>
+
+    <th class="tableHeader">
+      <strong>Edit</strong>
+    </th>
+
+    <th class="tableHeader">
+      <strong>Delete</strong>
+    </th>
+
+  </tr>
+  <tr class="tableData" *ngFor="let element of _contactListData">
+    <td class="tableData">{{element.firstName}}</td>
+    <td class="tableData">{{element.lastName}}</td>
+    <td class="tableData">{{element.phone}}</td>
+    <td class="tableData"><img (click)="editContact(element)" src="../assets/edit.png" style="max-height: 20px; max-width: 20px;"/> </td>
+    <td class="tableData"><img (click)="deleteContact(element)" src="../assets/delete.png" style="max-height: 20px; max-width: 20px;"/> </td>
+  </tr>
+</table>
+
+</div>
